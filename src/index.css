@@ -1,68 +1,63 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Header */
+.header {
+  display: flex;                  /* Utilizamos Flexbox */
+  justify-content: flex-start;    /* Logo a la izquierda */
+  align-items: center;            /* Centra verticalmente el logo */
+  padding: 10px 20px;             /* Espaciado interno */
+  background-color: #333;         /* Fondo oscuro (negro) */
+  color: white;                   /* Texto blanco */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.logo-container {
+  flex: 1;                        /* Asegura que el logo se quede a la izquierda */
 }
 
-body {
+.logo {
+  width: 150px;                   /* Tamaño del logo */
+  height: auto;                   /* Mantiene la proporción */
+}
+
+/* Nav */
+.nav {
+  background-color: #333;         /* Fondo oscuro */
+  padding: 10px 0;                /* Espaciado superior e inferior */
+}
+
+.nav ul {
+  display: flex;                  /* Menú en fila */
+  list-style: none;               /* Elimina los puntos de la lista */
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  justify-content: center;        /* Centra el menú en la pantalla */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.nav ul li {
+  margin-left: 20px;              /* Espaciado entre los elementos */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.nav ul li a {
+  text-decoration: none;          /* Elimina subrayado */
+  color: white;                   /* Texto blanco */
+  font-size: 18px;                /* Tamaño del texto */
+  transition: color 0.3s;         /* Transición suave para el hover */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.nav ul li a:hover {
+  color: #f1c40f;                 /* Color amarillo al pasar el mouse */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .header {
+    justify-content: center;      /* Centra el logo en pantallas pequeñas */
   }
-  a:hover {
-    color: #747bff;
+
+  .nav ul {
+    flex-direction: column;       /* El menú cambia a columna en pantallas pequeñas */
+    align-items: center;          /* Alinea los items al centro */
   }
-  button {
-    background-color: #f9f9f9;
+
+  .nav ul li {
+    margin: 10px 0;               /* Espaciado entre los items del menú */
   }
 }
