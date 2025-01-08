@@ -1,63 +1,227 @@
+/* Variables de color */
+:root {
+  --yellow-lemon: #f1c40f;  /* Color amarillo limón */
+  --black: #333;            /* Color negro */
+  --white: #fff;            /* Color blanco */
+  --gray: #f4f4f4;          /* Color gris claro */
+}
+
 /* Header */
 .header {
-  display: flex;                  /* Utilizamos Flexbox */
-  justify-content: flex-start;    /* Logo a la izquierda */
-  align-items: center;            /* Centra verticalmente el logo */
-  padding: 10px 20px;             /* Espaciado interno */
-  background-color: #333;         /* Fondo oscuro (negro) */
-  color: white;                   /* Texto blanco */
+  display: flex;
+  flex-direction: column;             /* Alinea los elementos en columna */
+  justify-content: center;            /* Centra los elementos verticalmente */
+  align-items: center;                /* Centra los elementos horizontalmente */
+  padding: 20px;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .logo-container {
-  flex: 1;                        /* Asegura que el logo se quede a la izquierda */
+  flex: 1;
 }
 
 .logo {
-  width: 150px;                   /* Tamaño del logo */
-  height: auto;                   /* Mantiene la proporción */
+  width: 120px;                       /* 20% menos del tamaño original */
+  height: auto;
+  margin-bottom: 20px;                /* Espaciado entre el logo y el menú */
 }
 
 /* Nav */
 .nav {
-  background-color: #333;         /* Fondo oscuro */
-  padding: 10px 0;                /* Espaciado superior e inferior */
+  background-color: var(--yellow-lemon);
+  width: 100%;
+  padding: 10px 0;
 }
 
 .nav ul {
-  display: flex;                  /* Menú en fila */
-  list-style: none;               /* Elimina los puntos de la lista */
+  display: flex;
+  justify-content: center;            /* Centra el menú en el header */
+  list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: center;        /* Centra el menú en la pantalla */
 }
 
 .nav ul li {
-  margin-left: 20px;              /* Espaciado entre los elementos */
+  margin: 0 15px;
 }
 
 .nav ul li a {
-  text-decoration: none;          /* Elimina subrayado */
-  color: white;                   /* Texto blanco */
-  font-size: 18px;                /* Tamaño del texto */
-  transition: color 0.3s;         /* Transición suave para el hover */
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .nav ul li a:hover {
-  color: #f1c40f;                 /* Color amarillo al pasar el mouse */
+  color: var(--white);
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .header {
-    justify-content: center;      /* Centra el logo en pantallas pequeñas */
-  }
+/* Estilo general del body */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--gray);
+  color: var(--black);
+}
 
-  .nav ul {
-    flex-direction: column;       /* El menú cambia a columna en pantallas pequeñas */
-    align-items: center;          /* Alinea los items al centro */
-  }
+/* Títulos */
+h1, h2, h3 {
+  color: var(--black);
+}
 
-  .nav ul li {
-    margin: 10px 0;               /* Espaciado entre los items del menú */
-  }
+/* Párrafos */
+p {
+  color: #666;
+}
+
+/* Sección básica */
+section {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Estilo para botones */
+button {
+  background-color: #ff6347;
+  color: var(--white);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4500;
+}
+
+/* Estilos específicos para CallToAction */
+.call-to-action {
+  background-color: #ff6347;
+  color: var(--white);
+  text-align: center;
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.call-to-action h1 {
+  font-size: 40px;
+}
+
+.call-to-action p {
+  font-size: 20px;
+}
+
+.call-to-action button {
+  background-color: var(--white);
+  color: #ff6347;
+  padding: 12px 25px;
+  border: 2px solid #ff6347;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.call-to-action button:hover {
+  background-color: #ff4500;
+  color: var(--white);
+}
+
+/* Estilos para Specials */
+.specials {
+  background-color: var(--white);
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.specials h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.specials div {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.specials p {
+  font-size: 18px;
+  color: var(--black);
+}
+
+/* Estilos para CustomersSay */
+.customers-say {
+  background-color: var(--gray);
+  padding: 40px;
+  text-align: center;
+}
+
+.customers-say h2 {
+  font-size: 36px;
+}
+
+.customers-say div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.customers-say p {
+  font-size: 18px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Estilos para Chicago */
+.chicago {
+  background-color: var(--white);
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.chicago h2 {
+  font-size: 36px;
+}
+
+.chicago p {
+  font-size: 18px;
+  color: #666;
+}
+
+.booking-page {
+  display: flex;
+  flex-direction: column;       /* Organiza el contenido de arriba a abajo */
+  justify-content: center;      /* Centra el contenido verticalmente */
+  align-items: center;          /* Centra el contenido horizontalmente */
+  height: 60vh;                /* Ocupa toda la altura de la ventana */
+  background-color: #f4f4f4;
+  padding: 10px 20px;           /* Menos espaciado interno */
+  text-align: center;           /* Centra el texto */
+  margin: 0;                    /* Elimina el margen por defecto */
+}
+
+.booking-page h1 {
+  font-size: 32px;              /* Tamaño de fuente reducido */
+  color: #333;
+  margin-bottom: 10px;          /* Menos espacio debajo del título */
+}
+
+.booking-form {
+  display: grid;
+  max-width: 450px;             /* Ancho máximo del formulario */
+  width: 100%;
+  gap: 15px;                    /* Espaciado entre los elementos */
+  padding: 15px;
+  background-color: #fff;
+  border: 2px solid #333;       /* Borde de 2px de color negro */
+  border-radius: 8px;           /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 0;                /* Elimina el espacio superior */
+  margin-bottom: 0;             /* Elimina el espacio inferior */
 }
