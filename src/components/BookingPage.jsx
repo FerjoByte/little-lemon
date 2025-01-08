@@ -1,12 +1,13 @@
-import React from "react";
-import BookingForm from "./BookingForm";
+import React from 'react';
+import BookingForm from './BookingForm';
 
-function BookingPage({ updateTimes, availableTimes }) {
+function BookingPage({ updateTimes, availableTimes, submitForm }) {
   return (
-    <div className="booking-page">
-      <h1>Reserve Your Table</h1>
-      <BookingForm updateTimes={updateTimes} availableTimes={availableTimes} />
-    </div>
+    <BookingForm
+      updateTimes={updateTimes}
+      availableTimes={availableTimes}
+      submitForm={submitForm} // Pasa la función submitForm como prop
+    />
   );
 }
 

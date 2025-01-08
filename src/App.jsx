@@ -16,8 +16,8 @@ function App() {
 
   // Función para actualizar las horas disponibles
   const updateTimes = (selectedDate) => {
-    // Cambia las horas disponibles según la fecha seleccionada
-    setAvailableTimes(["17:00", "18:00", "19:00", "20:00", "21:00"]);
+    const fetchedTimes = fetchAPI(selectedDate);
+    setAvailableTimes(fetchedTimes);
   };
 
   return (
